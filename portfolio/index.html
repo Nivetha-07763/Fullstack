@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+
+    <title>Portfolio</title>
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black;
+            border-radius: 50%;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav style="background-color: rgb(172, 235, 247);">
+        <ul class="nav nav-pills justify-content-end align-items-center gap-3 p-2">
+            <li class="nav-item">
+                <a href="#home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="container mt-5" id="home">
+        <h1 style="text-align: center;">NIVETHA J</h1>
+        <p class="lead" style="text-align: center;">Web Developer</p>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Education:</h3>
+                        <h6>BE Computer Science and Engineering</h6>
+                        (2023 - Present)<br>
+                        KCET
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Skills:</h3>
+                        <ul>
+                            <li>Programming: C, Python</li>
+                            <li>Database: SQL</li>
+                            <li>Web & App Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <h1 id="projects" class="text-center mb-4">Projects</h1>
+
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-center">
+                                <h3>Real-time News Aggregator</h3>
+                                <p>
+                                    Web-based application that gathers news from multiple sources and
+                                    displays real-time updates efficiently.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-center">
+                                <h3>Food Waste Management System</h3>
+                                <p>
+                                    Flutter-based mobile application for managing surplus food donations
+                                    and reducing food wastage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card w-50">
+                            <div class="card-body text-center">
+                                <h3>MindSculpt</h3>
+                                <p>
+                                    Mobile IQ testing app with a game-like experience, clean architecture,
+                                    and premium UI design.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Certifications:</h3>
+                        <ul>
+                            <li><b>Infosys</b> - Java, SQL, ML</li><br>
+                            <li><b>Cisco </b>- Networking Essentials</li><br>
+
+                            <li><b>MongoDB </b>- basics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Internships:</h3>
+                        <h6>Abservetech Private Limited</h6>
+                        Flutter App Development<br><br>
+                        <h6>AstroWebSolution</h6>
+                        Web Development
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h1 id="contact" style="text-align:center;">Contact</h1><br>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p><strong>Email:</strong> nivethaj0707@example.com</p>
+                        <p><strong>Phone:</strong> +91 7558169040</p>
+                        <p><strong>LinkedIn:</strong>
+                            <a href="https://www.linkedin.com/in/nivethaj07" target="_blank">
+                                linkedin.com/in/nivethaj07
+                            </a>
+                        </p>
+                        <p><strong>GitHub:</strong>
+                            <a href="https://github.com/Nivetha-07763" target="_blank">
+                                github.com/Nivetha-07763
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+</body>
+
+<footer class="text-center py-3 mt-5" style="background-color: rgb(172, 235, 247);">
+    <p class="mb-1"><strong>Nivetha J</strong></p>
+    <p class="mb-0">© 2026 All Rights Reserved</p>
+</footer>
+
+
+</html>
