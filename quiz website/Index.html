@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KCET Quiz</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+    <h2 class="text-center text-primary">KCET Learning</h2>
+            <h4 class="text-center mb-3">Quiz Questions</h4>
+
+    <div class="container mt-5">
+        <div class="card shadow p-4 mx-auto" style="max-width:600px;">
+
+            
+
+            <h5 id="question" class="mb-3"></h5>
+
+            <form id="quizForm">
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="answer" value="0">
+                    <label class="form-check-label" id="opt0"></label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="answer" value="1">
+                    <label class="form-check-label" id="opt1"></label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="answer" value="2">
+                    <label class="form-check-label" id="opt2"></label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="answer" value="3">
+                    <label class="form-check-label" id="opt3"></label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" onclick="prevQuestion()">Previous</button>
+                    <button type="button" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+                </div>
+
+            </form>
+
+            <h4 id="result" class="text-center text-success mt-3"></h4>
+
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+
+            {
+                q: "1. Who is the Prime Minister of India in 2026?",
+                o: ["Rahul Gandhi", "Narendra Modi", "Amit Shah", "Droupadi Murmu"], a: 1
+            },
+
+            {
+                q: "2. Which country hosted the G20 Summit 2025?",
+                o: ["India", "Brazil", "USA", "Japan"], a: 1
+            },
+
+            {
+                q: "3. Chandrayaan-3 mission landed on which celestial body?",
+                o: ["Mars", "Moon", "Venus", "Jupiter"], a: 1
+            },
+
+            {
+                q: "4. Which city hosted the 2024 Summer Olympics?",
+                o: ["Tokyo", "Paris", "Los Angeles", "London"], a: 1
+            },
+
+            {
+                q: "5. Who is the current President of India?",
+                o: ["Ram Nath Kovind", "Droupadi Murmu", "Pratibha Patil", "A.P.J Abdul Kalam"], a: 1
+            },
+
+            {
+                q: "6. Which Indian state launched 'Kalaignar Magalir Urimai Scheme'?",
+                o: ["Kerala", "Karnataka", "Tamil Nadu", "Andhra Pradesh"], a: 2
+            },
+
+            {
+                q: "7. Which company launched ChatGPT?",
+                o: ["Google", "Microsoft", "OpenAI", "Meta"], a: 2
+            },
+
+            {
+                q: "8. Which country is leading in AI development globally?",
+                o: ["India", "USA", "Brazil", "Australia"], a: 1
+            },
+
+            {
+                q: "9. Who won ICC Cricket World Cup 2023?",
+                o: ["India", "Australia", "England", "New Zealand"], a: 1
+            },
+
+            {
+                q: "10. Which Indian mission aims to send humans to space?",
+                o: ["Aditya-L1", "Gaganyaan", "Chandrayaan-4", "NavIC"], a: 1
+            }
+
+        ];
+
+        let index = 0;
+        let userAnswers = [];
+
+        function loadQuestion() {
+            let q = questions[index];
+            document.getElementById("question").innerText = q.q;
+
+            for (let i = 0; i < 4; i++) {
+                document.getElementById("opt" + i).innerText = q.o[i];
+            }
+
+            document.querySelectorAll("input[name='answer']").forEach(r => r.checked = false);
+
+            if (userAnswers[index] !== undefined) {
+                document.querySelector("input[value='" + userAnswers[index] + "']").checked = true;
+            }
+        }
+
+        function nextQuestion() {
+            let selected = document.querySelector("input[name='answer']:checked");
+
+            if (!selected) {
+                alert("Please select an answer");
+                return;
+            }
+
+            userAnswers[index] = parseInt(selected.value);
+            index++;
+
+            if (index < questions.length) {
+                loadQuestion();
+            } else {
+                calculateScore();
+            }
+        }
+
+        function prevQuestion() {
+            if (index > 0) {
+                index--;
+                loadQuestion();
+            }
+        }
+
+        function calculateScore() {
+            let score = 0;
+
+            for (let i = 0; i < questions.length; i++) {
+                if (userAnswers[i] === questions[i].a) {
+                    score++;
+                }
+            }
+
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("question").innerText = "Quiz Finished!";
+            document.getElementById("result").innerText =
+                "Your Score: " + score + " / " + questions.length;
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+
+</html>
